@@ -1,8 +1,5 @@
 # Heros-server
 
-Descrição
-Projeto construido para vaga de Fullstack
-
 ## Instalação
 
 ### Pré-requisitos
