@@ -24,7 +24,7 @@ const WeaponSchema = new Schema (
     },
     type: {
       type: String,
-      enum: ['axe', 'sword', 'arrow']
+      enum: ['axe', 'sword', 'arrow', 'wand', 'mace', 'misc', 'staff', 'scythe']
     }
   },
   { timestamps: true,
