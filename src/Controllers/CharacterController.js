@@ -162,9 +162,7 @@ async function initiateCharacter () {
     const character = await new Character(product)
     const indexWeapon = AttributesFactory.generateRandomAttribute(0, 9)
     character.weapons.push(weapons[indexWeapon])
-    console.log(character)
     await character.save()
-    console.log('weapon', character)
   }
 
   return 
