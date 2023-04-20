@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const AttributesFactory = require('../utils/attributesFactory')
+const AttributesFactory = require('../utils/AttributesFactory')
 
 // Cria a model Knight
 const CharacterSchema = new mongoose.Schema({
