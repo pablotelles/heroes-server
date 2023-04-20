@@ -11,12 +11,12 @@ require('dotenv').config()
 const app = express()
 
 // solve cors
-app.use(cors({credentials: true, origin: 'http://localhost:8080'}))
+app.use(cors({credentials: true, origin: '*'}))
 
 async function conn () {
 // Make connection with MongoDB
-  const dbUrl = await mongoUnit.start();
-  await mongoose.connect(dbUrl, { useNewUrlParser: true });
+  const dbUrl = await mongoUnit.start()
+  await mongoose.connect(dbUrl, { useNewUrlParser: true })
 }
 
 conn()
