@@ -11,6 +11,7 @@ Router.get('/', WeaponController.index)
 Router.post('/', WeaponController.create)
 Router.put('/', WeaponController.update)
 Router.get('/:id', WeaponController.getById)
+Router.post('/equpped', WeaponController.equipped)
 
 
 module.exports = Router

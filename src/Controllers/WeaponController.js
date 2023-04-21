@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const Weapon = require('../Models/Weapon')
+const Character = require('../Models/Character')
 const WeaponFactory = require('../utils/WeaponFactory')
 
 
@@ -109,7 +110,6 @@ router.create = async (req, res) => {
   }
 }
 
-
 router.getById = async (params, res) => {
   const {id} = params.params
   try {
@@ -121,7 +121,6 @@ router.getById = async (params, res) => {
 }
 router.update = async (req, res) => {
   const data = req.body
-
   try {
     const weapon = new Weapon(data)
     weapon.save()
@@ -130,6 +129,24 @@ router.update = async (req, res) => {
     return res.status(200).send(error)
   }
 }
+router.equipped = async (req, res) => {
+  const { weaponId , charId} = req.body
+  try {
+    const char = await Character.findById(charId)
+      .populate('weapons') 
 
+    char.weapons.forEach((weapon) => {
+      if(weapon._id.equals(weaponId)) {        
+        weapon.equipped = true        
+      } else {
+        weapon.equipped = false
+      }
+    })
+    await char.save()
+    return res.status(200).send(char)
+  } catch (error) {
+    return res.status(200).send(error)
+  }
+}
 
 module.exports = router

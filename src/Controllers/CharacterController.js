@@ -79,7 +79,7 @@ const weapons = [
     mod: 2,
     description: 'An enchanted axe imbued with powerful magic.',
     attr: 'strength',
-    equipped: true,
+    equipped: false,
     type: 'axe'
   },
   {
@@ -87,7 +87,7 @@ const weapons = [
     mod: 3,
     description: 'A sleek, deadly dagger favored by assassins.',
     attr: 'dexterity',
-    equipped: true,
+    equipped: false,
     type: 'sword'
   },
   {
@@ -95,7 +95,7 @@ const weapons = [
     mod: 1,
     description: 'A beautiful sword with a deadly edge, stained with the blood of countless foes.',
     attr: 'constitution',
-    equipped: true,
+    equipped: false,
     type: 'sword'
   },
   {
@@ -103,7 +103,7 @@ const weapons = [
     mod: 3,
     description: 'A powerful staff wielded only by the most skilled of mages.',
     attr: 'intelligence',
-    equipped: true,
+    equipped: false,
     type: 'staff'
   },
   {
@@ -111,7 +111,7 @@ const weapons = [
     mod: 2,
     description: 'A humble wand that channels the wielder\'s wisdom into powerful spells.',
     attr: 'wisdom',
-    equipped: true,
+    equipped: false,
     type: 'wand'
   },
   {
@@ -119,7 +119,7 @@ const weapons = [
     mod: 1,
     description: 'A delicate bracelet that imbues the wearer with a charismatic aura.',
     attr: 'charisma',
-    equipped: true,
+    equipped: false,
     type: 'misc'
   },
   {
@@ -127,7 +127,7 @@ const weapons = [
     mod: 3,
     description: 'A fearsome scythe that drains the life force of its victims.',
     attr: 'strength',
-    equipped: true,
+    equipped: false,
     type: 'scythe'
   },
   {
@@ -135,7 +135,7 @@ const weapons = [
     mod: 2,
     description: 'A blade that crackles with icy energy, freezing its foes in place.',
     attr: 'dexterity',
-    equipped: true,
+    equipped: false,
     type: 'sword'
   },
   {
@@ -143,7 +143,7 @@ const weapons = [
     mod: 1,
     description: 'A massive mace that can shatter bones and crush armor with ease.',
     attr: 'constitution',
-    equipped: true,
+    equipped: false,
     type: 'mace'
   },
   {
@@ -151,20 +151,19 @@ const weapons = [
     mod: 3,
     description: 'A staff that channels dark magic and can raise the dead to fight for its wielder.',
     attr: 'intelligence',
-    equipped: true,
+    equipped: false,
     type: 'staff'
   }
 ]
-
 async function initiateCharacter () {
   for (let item of knights) {
     const product = await CharacterFactory.createCharacter(item)
     const character = await new Character(product)
-    const indexWeapon = AttributesFactory.generateRandomAttribute(0, 9)
-    character.weapons.push(weapons[indexWeapon])
+    for (let i = 0; AttributesFactory.generateRandomAttribute(1, 8) > i; i++) {
+      character.weapons.push(weapons[AttributesFactory.generateRandomAttribute(0, 9)])
+    }    
     await character.save()
   }
-
   return 
 }
 initiateCharacter()
