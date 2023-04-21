@@ -1,4 +1,4 @@
-# Heros-server
+# heroes-server
 
 ## Instalação
 
