@@ -27,6 +27,7 @@
 - Mongoose
 - mongodb
 - nodemon
+- MongoUnit
 - eslint - padronização
 
 ## Autor
