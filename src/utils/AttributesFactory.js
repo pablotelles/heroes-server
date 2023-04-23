@@ -3,13 +3,23 @@ class  AttributesFactory {
   static createAttribute(type) {
     switch (type) {
     case 'knight':
-      return genereteRadomNumber(4, 20)
+      return genereteRadomNumber(2, 20)
     case 'wizard':
-      return genereteRadomNumber(6, 20)
-    case 'weapon':
-      return genereteRadomNumber(1, 3)
+      return genereteRadomNumber(2, 25)
+    case 'ranger':
+      return genereteRadomNumber(2, 20)
+    case 'necromancer':
+      return genereteRadomNumber(2, 20)
+    case 'thief':
+      return genereteRadomNumber(2, 30)
+    case 'warrior':
+      return genereteRadomNumber(2, 22)
+    case 'sorcerer':
+      return genereteRadomNumber(2, 20)
+    case 'hunter':
+      return genereteRadomNumber(2, 20)
     default:
-      break
+      return genereteRadomNumber(2, 20)
     }
   }
   static findMaxAttribute (attributes) {

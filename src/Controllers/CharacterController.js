@@ -4,7 +4,7 @@ const Character = require('../Models/Character')
 const CharacterFactory = require('../utils/CharacterFactory')
 const Weapon = require('../Models/Weapon')
 const {genereteRadomNumber} = require('../utils/comuns')
-const { InitialWeapons, Initialknights } = require('../../data/initialData') // adds characters and weapons to start
+const { InitialWeapons, Initialknights, InitialArmors } = require('../../data/initialData') // adds characters and weapons to start
 
 async function initiateCharacter () {
   for (let item of Initialknights) {
@@ -12,7 +12,10 @@ async function initiateCharacter () {
     const character = await new Character(product)
     for (let i = 0; genereteRadomNumber(1, 8) > i; i++) {
       character.weapons.push(InitialWeapons[genereteRadomNumber(0, 9)])
-    }    
+    }
+    for (let i = 0; genereteRadomNumber(1, 8) > i; i++) {
+      character.armor.push(InitialArmors[genereteRadomNumber(0, 4)])
+    }   
     await character.save()
   }
   return 
@@ -23,6 +26,7 @@ router.index = async (params, res) => {
   try {
     const character = await Character.find()
       .populate('weapons')
+      .populate('armor')
       .populate('attributes')
       .lean()
 

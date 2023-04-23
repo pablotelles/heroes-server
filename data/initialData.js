@@ -1,68 +1,94 @@
+const { genereteRadomNumber } = require('../src/utils/comuns')
+
 // Add some characters
 const Initialknights = [
   {
-    name: 'Jon Snow',
-    nickname: 'The Bastard of Winterfell',
-    birthday: '1986-07-01',
-    type: 'knight',
+    name: 'Gandalf',
+    nickname: 'The Grey',
+    birthday: '1890-02-14',
+    type: 'wizard',
     status: 'legend',
-    description: 'Former Lord Commander of the Nights Watch and King in the North.',
+    description: 'A wise and powerful wizard, who has been a member of the Tibian Council of Wizards for many years.'
   },
   {
-    name: 'Brienne of Tarth',
-    nickname: 'The Maid of Tarth',
-    birthday: '1984-09-15',
-    type: 'knight',
+    name: 'Bilbo Bolseiro',
+    nickname: 'The Hobbit',
+    birthday: '1900-09-22',
+    type: 'thief',
     status: 'legend',
-    description: 'A skilled warrior and loyal protector of the Stark sisters.',
+    description: 'A famous hobbit, who gained notoriety for his role in the quest for the Lonely Mountain and his possession of the One Ring. Despite his age, he remains spry and quick-witted, and is known for his love of good food and comfortable lodgings.'
   },
   {
-    name: 'Jaime Lannister',
-    nickname: 'The Kingslayer',
-    birthday: '1980-06-06',
-    type: 'knight',
-    status: 'legend',
-    description: 'A skilled swordsman and former Lord Commander of the Kingsguard.',
+    name: 'Legolas',
+    nickname: 'The Archer',
+    birthday: '1980-07-21',
+    type: 'ranger',
+    status: 'hero',
+    description: 'An elven archer, who has travelled across the land of Tibia and is known for his exceptional skills with a bow.'
   },
   {
-    name: 'Sandor Clegane',
-    nickname: 'The Hound',
-    birthday: '1981-03-21',
+    name: 'Aragorn',
+    nickname: 'The Ranger',
+    birthday: '1965-03-01',
     type: 'knight',
     status: 'legend',
-    description: 'A fierce fighter and former bodyguard to the Lannisters.',
+    description: 'A skilled swordsman and tracker, who has served as a loyal protector of the kingdom of Tibia for many years.'
   },
   {
-    name: 'Tormund Giantsbane',
-    nickname: 'Tormund Thunderfist',
-    birthday: '1982-11-12',
-    type: 'knight',
+    name: 'Sauron',
+    nickname: 'The Dark Lord',
+    birthday: '1965-03-01',
+    type: 'necromancer',
     status: 'legend',
-    description: 'A wildling warrior and ally to Jon Snow.',
+    description: 'An evil sorcerer, who seeks to conquer the land of Tibia and enslave its inhabitants.'
   },
   {
-    name: 'Podrick Payne',
-    nickname: 'Pod',
-    birthday: '1992-04-15',
-    type: 'knight',
-    status: 'legend',
-    description: 'A squire turned skilled warrior and loyal follower of Brienne of Tarth.',
+    name: 'Drizzt',
+    nickname: 'The Drow',
+    birthday: '1975-11-05',
+    type: 'thief',
+    status: 'hero',
+    description: 'A skilled and cunning drow, who has used his stealth and agility to outsmart many opponents in the land of Tibia.'
   },
   {
-    name: 'Grey Worm',
-    nickname: 'The Unsullied',
-    birthday: '1991-08-27',
-    type: 'knight',
+    name: 'Elminster',
+    nickname: 'The Sage',
+    birthday: '1945-12-02',
+    type: 'wizard',
     status: 'legend',
-    description: 'A highly trained warrior and former commander of the Unsullied army.',
+    description: 'A powerful wizard, who has been a mentor to many young wizards in the land of Tibia.'
   },
   {
-    name: 'Davos Seaworth',
-    nickname: 'The Onion Knight',
-    birthday: '1983-12-22',
-    type: 'knight',
+    name: 'Wulfgar',
+    nickname: 'The Barbarian',
+    birthday: '1985-04-30',
+    type: 'warrior',
+    status: 'hero',
+    description: 'A fierce warrior, who has proven his strength and courage in many battles across the land of Tibia.'
+  },
+  {
+    name: 'Raistlin',
+    nickname: 'The Dark Mage',
+    birthday: '1970-09-17',
+    type: 'sorcerer',
     status: 'legend',
-    description: 'A former smuggler turned advisor and supporter of Stannis and Jon Snow.',
+    description: 'A powerful mage, who has delved deep into the forbidden arts of magic, risking his sanity and his soul in the process.'
+  },
+  {
+    name: 'Artemis',
+    nickname: 'The Bounty Hunter',
+    birthday: '1990-06-23',
+    type: 'hunter',
+    status: 'hero',
+    description: 'A skilled hunter, who has made a name for himself by tracking down dangerous beasts and bandits in the land of Tibia.'
+  },
+  {
+    name: 'Xena',
+    nickname: 'The Warrior Princess',
+    birthday: '1980-03-15',
+    type: 'warrior',
+    status: 'hero',
+    description: 'A fearless warrior, who has fought against many enemies in the land of Tibia, including dragons, demons, and undead.'
   }
 ]
 // Add some weapons
@@ -147,9 +173,83 @@ const InitialWeapons = [
       equipped: false,
       type: 'staff'
     }
-  ]
+]
+
+const InitialArmors = [
+  {
+    name: 'Leather Armor',
+    defense: genereteRadomNumber(2, 8),
+    type: 'Armor',
+    equipped: false,
+    description: 'A basic armor made of leather.'
+  },
+  {
+    name: 'Chain Armor',
+    defense: genereteRadomNumber(2, 8),
+    type: 'Armor',
+    equipped: false,
+    description: 'A heavy armor made of interlocking chains.'
+  },
+  {
+    name: 'Plate Armor',
+    defense: genereteRadomNumber(2, 8),
+    type: 'Armor',
+    equipped: false,
+    description: 'A full body armor made of metal plates.'
+  },
+  {
+    name: 'Robe',
+    defense: genereteRadomNumber(2, 8),
+    type: 'Armor',
+    equipped: false,
+    description: 'A simple robe made of light fabric.'
+  },
+  {
+    name: 'Studded Armor',
+    defense: genereteRadomNumber(2, 8),
+    type: 'Armor',
+    equipped: false,
+    description: 'A reinforced armor with metal studs.'
+  },
+  {
+    name: 'Scale Armor',
+    defense: genereteRadomNumber(2, 8),
+    type: 'Armor',
+    equipped: false,
+    description: 'An armor made of small metal scales.'
+  },
+  {
+    name: 'Plate Legs',
+    defense: genereteRadomNumber(2, 8),
+    type: 'Legs',
+    equipped: false,
+    description: 'Metal leg plates that offer excellent protection.'
+  },
+  {
+    name: 'Chain Helmet',
+    defense: genereteRadomNumber(2, 8),
+    type: 'Helmet',
+    equipped: false,
+    description: 'A helmet made of interlocking chains.'
+  },
+  {
+    name: 'Plate Shield',
+    defense: genereteRadomNumber(2, 8),
+    type: 'Shield',
+    equipped: false,
+    description: 'A large metal shield that provides great defense.'
+  },
+  {
+    name: 'Crown',
+    defense: genereteRadomNumber(2, 8),
+    type: 'Helmet',
+    equipped: false,
+    description: 'A golden crown adorned with precious gems.'
+  }
+]
 
 module.exports = {
   Initialknights,
-  InitialWeapons
+  InitialWeapons,
+  InitialArmors
 }

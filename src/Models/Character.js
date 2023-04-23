@@ -10,7 +10,13 @@ const CharacterSchema = new mongoose.Schema({
   nickname: {
     type: String,
     required: true,
+    unique: true,
     trim: true
+  },
+  type: {
+    type: String,
+    enum: ['wizard', 'ranger', 'knight', 'necromancer', 'rogue', 'warrior', 'sorcerer', 'hunter', 'thief'],
+    require: true,
   },
   birthday: {
     type: Date,
@@ -24,41 +30,28 @@ const CharacterSchema = new mongoose.Schema({
   weapons: [{
     name: {type: String, require: true},
     attr: {type: String, require: true},
+    description: {type: String, require: true},
     mod: {type: Number, require: true},
     equipped: {type: Boolean, require: true},
   }],
+  armor: [{
+    name: {type: String, require: true},
+    defense: {type: String, require: true},
+    equipped: {type: Boolean, default: false},
+    description: {type: String, require: true},
+    type: {type: String, require: true},
+  }],
   attributes: {
-    strength: {
-      type: Number,
-      required: true,
-    },
-    dexterity: {
-      type: Number,
-      required: true,
-    },
-    constitution: {
-      type: Number,
-      required: true,
-    },
-    intelligence: {
-      type: Number,
-      required: true,
-    },
-    wisdom: {
-      type: Number,
-      required: true,
-    },
-    charisma: {
-      type: Number,
-      required: true,
-    },
+    strength: {type: Number,required: true},
+    dexterity: {type: Number, required: true},
+    constitution: {type: Number, required: true},
+    intelligence: {type: Number, required: true},
+    wisdom: {type: Number, required: true},
+    charisma: {type: Number, required: true},
   },
-  keyAttribute: {
-    type: String,
-    required: true,
-    default: function () {
-      return AttributesFactory.findMaxAttribute(this.attributes)
-    },
+  keyAttribute: { type: String,  required: true, default: function () {
+    return AttributesFactory.findMaxAttribute(this.attributes)
+  },
   },
   description: {
     type: String,
@@ -75,6 +68,7 @@ const CharacterSchema = new mongoose.Schema({
 
 CharacterSchema.pre('save', function (next) {
   if (this.nickname && typeof this.nickname === 'string') {
+    console.log('oi')
     this.nickname = this.nickname.replace(/\s+/g, '')
   }
   this.updated_at = new Date()
