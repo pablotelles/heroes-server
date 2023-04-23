@@ -68,10 +68,17 @@ const CharacterSchema = new mongoose.Schema({
 
 CharacterSchema.pre('save', function (next) {
   if (this.nickname && typeof this.nickname === 'string') {
-    console.log('oi')
     this.nickname = this.nickname.replace(/\s+/g, '')
   }
   this.updated_at = new Date()
+  next()
+})
+CharacterSchema.pre('updateOne', function(next) {
+  const update = this.getUpdate()
+  if (update.nickname) {
+    update.nickname = update.nickname.replace(/\s+/g, '')
+  }
+  console.log(update.nickname)
   next()
 })
 
