@@ -95,7 +95,7 @@ const Initialknights = [
 const InitialWeapons = [
   {
     name: 'Mighty Axe',
-    mod: 2,
+    mod: genereteRadomNumber(1, 15),
     description: 'An enchanted axe imbued with powerful magic.',
     attr: 'strength',
     equipped: false,
@@ -103,7 +103,7 @@ const InitialWeapons = [
   },
   {
     name: 'Assassin\'s Blade',
-      mod: 3,
+      mod: genereteRadomNumber(2, 15),
       description: 'A sleek, deadly dagger favored by assassins.',
       attr: 'dexterity',
       equipped: false,
@@ -111,7 +111,7 @@ const InitialWeapons = [
     },
     {
       name: 'Crimson Sword',
-      mod: 1,
+      mod: genereteRadomNumber(2, 15),
       description: 'A beautiful sword with a deadly edge, stained with the blood of countless foes.',
       attr: 'constitution',
       equipped: false,
@@ -119,7 +119,7 @@ const InitialWeapons = [
     },
     {
       name: 'Staff of the Archmage',
-      mod: 3,
+      mod: genereteRadomNumber(2, 15),
       description: 'A powerful staff wielded only by the most skilled of mages.',
       attr: 'intelligence',
       equipped: false,
@@ -127,7 +127,7 @@ const InitialWeapons = [
     },
     {
       name: 'Wisdom Wand',
-      mod: 2,
+      mod: genereteRadomNumber(2, 15),
       description: 'A humble wand that channels the wielder\'s wisdom into powerful spells.',
       attr: 'wisdom',
       equipped: false,
@@ -135,7 +135,7 @@ const InitialWeapons = [
     },
     {
       name: 'Charm Bracelet',
-      mod: 1,
+      mod: genereteRadomNumber(2, 15),
       description: 'A delicate bracelet that imbues the wearer with a charismatic aura.',
       attr: 'charisma',
       equipped: false,
@@ -143,7 +143,7 @@ const InitialWeapons = [
     },
     {
       name: 'Soulstealer Scythe',
-      mod: 3,
+      mod: genereteRadomNumber(2, 15),
       description: 'A fearsome scythe that drains the life force of its victims.',
       attr: 'strength',
       equipped: false,
@@ -151,7 +151,7 @@ const InitialWeapons = [
     },
     {
       name: 'Frostbrand Sword',
-      mod: 2,
+      mod: genereteRadomNumber(2, 15),
       description: 'A blade that crackles with icy energy, freezing its foes in place.',
       attr: 'dexterity',
       equipped: false,
@@ -159,7 +159,7 @@ const InitialWeapons = [
     },
     {
       name: 'Giant\'s Mace',
-      mod: 1,
+      mod: genereteRadomNumber(2, 15),
       description: 'A massive mace that can shatter bones and crush armor with ease.',
       attr: 'constitution',
       equipped: false,
@@ -167,7 +167,7 @@ const InitialWeapons = [
     },
     {
       name: 'Staff of the Necromancer',
-      mod: 3,
+      mod: genereteRadomNumber(2, 15),
       description: 'A staff that channels dark magic and can raise the dead to fight for its wielder.',
       attr: 'intelligence',
       equipped: false,
@@ -178,70 +178,70 @@ const InitialWeapons = [
 const InitialArmors = [
   {
     name: 'Leather Armor',
-    defense: genereteRadomNumber(2, 8),
+    defense: genereteRadomNumber(2, 15),
     type: 'Armor',
     equipped: false,
     description: 'A basic armor made of leather.'
   },
   {
     name: 'Chain Armor',
-    defense: genereteRadomNumber(2, 8),
+    defense: genereteRadomNumber(2, 15),
     type: 'Armor',
     equipped: false,
     description: 'A heavy armor made of interlocking chains.'
   },
   {
     name: 'Plate Armor',
-    defense: genereteRadomNumber(2, 8),
+    defense: genereteRadomNumber(2, 15),
     type: 'Armor',
     equipped: false,
     description: 'A full body armor made of metal plates.'
   },
   {
     name: 'Robe',
-    defense: genereteRadomNumber(2, 8),
+    defense: genereteRadomNumber(2, 15),
     type: 'Armor',
     equipped: false,
     description: 'A simple robe made of light fabric.'
   },
   {
     name: 'Studded Armor',
-    defense: genereteRadomNumber(2, 8),
+    defense: genereteRadomNumber(2, 15),
     type: 'Armor',
     equipped: false,
     description: 'A reinforced armor with metal studs.'
   },
   {
     name: 'Scale Armor',
-    defense: genereteRadomNumber(2, 8),
+    defense: genereteRadomNumber(2, 15),
     type: 'Armor',
     equipped: false,
     description: 'An armor made of small metal scales.'
   },
   {
     name: 'Plate Legs',
-    defense: genereteRadomNumber(2, 8),
+    defense: genereteRadomNumber(2, 15),
     type: 'Legs',
     equipped: false,
     description: 'Metal leg plates that offer excellent protection.'
   },
   {
     name: 'Chain Helmet',
-    defense: genereteRadomNumber(2, 8),
+    defense: genereteRadomNumber(2, 15),
     type: 'Helmet',
     equipped: false,
     description: 'A helmet made of interlocking chains.'
   },
   {
     name: 'Plate Shield',
-    defense: genereteRadomNumber(2, 8),
+    defense: genereteRadomNumber(2, 15),
     type: 'Shield',
     equipped: false,
     description: 'A large metal shield that provides great defense.'
   },
   {
     name: 'Crown',
-    defense: genereteRadomNumber(2, 8),
+    defense: genereteRadomNumber(2, 15),
     type: 'Helmet',
     equipped: false,
     description: 'A golden crown adorned with precious gems.'
