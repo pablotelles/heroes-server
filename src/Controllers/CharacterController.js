@@ -88,17 +88,46 @@ router.delete = async (params, res) => {
 }
 
 router.filter = async (params, res) => {
-  const {status} = params.query
+  const {status, nickname, type, page = 1, pageSize = 20} = params.query
   try {
-    const character = await Character.find({status: status})
+    let query = Character.find()
+
+    if (status) {
+      query = query.where('status').equals(status)
+    }
+
+    if (nickname) {
+      query = query.where('nickname').equals(nickname)
+    }
+
+    if (type) {
+      query = query.where('type').equals(type)
+    }
+
+    const totalCount = await Character.countDocuments(query)
+    const pageCount = Math.ceil(totalCount / pageSize)
+
+    const character = await query
       .populate('weapons')
       .populate('attributes')
+      .skip((page - 1) * pageSize)
+      .limit(pageSize)
       .lean()
 
-    return res.status(200).send(character)
+    const response = {
+      data: character,
+      page,
+      pageSize,
+      pageCount,
+      totalCount,
+    }
+
+    return res.status(200).send(response)
   } catch (err) {
     return res.status(400).send(err)
   }
 }
+
+
 
 module.exports = router
